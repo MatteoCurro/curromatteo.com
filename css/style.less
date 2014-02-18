@@ -1,0 +1,472 @@
+
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/proximanova-regular.eot');
+    src: url('../fonts/proximanova-regular.eot') format('embedded-opentype'),
+         url('../fonts/proximanova-regular.woff') format('woff'),
+         url('../fonts/proximanova-regular.ttf') format('truetype'),
+         url('../fonts/proximanova-regular.svg#ProximaNovaRegular') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaSemiBold';
+    src: url('../fonts/proximanova-semibold.eot');
+    src: url('../fonts/proximanova-semibold.eot') format('embedded-opentype'),
+         url('../fonts/proximanova-semibold.woff') format('woff'),
+         url('../fonts/proximanova-semibold.ttf') format('truetype'),
+         url('../fonts/proximanova-semibold.svg#ProximaNovaSemiBold') format('svg');
+}
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+body {
+	padding: 0;
+	margin: 0;
+	// font-family: 'Share Tech', sans-serif;
+	/*font-family: 'Share Tech Mono', sans-serif;*/
+	/*font-family: 'Share Tech', sans-serif;*/
+	font-family: 'ProximaNovaRegular', 'Futura', sans-serif;
+	// background-color: #fff;
+	// width: 100%;
+	// height: 100%;
+	// position: absolute;
+	text-rendering: optimizeLegibility;
+}
+.delete {
+	text-decoration:line-through;
+}
+
+p {
+	font-size: 1.3em;
+	line-height: 1.3em;
+	letter-spacing: 0.01em;
+	color: #444;
+}
+
+ul {
+	margin: 20px 0;
+	list-style-type: square;
+    list-style-position: outside;
+	li {
+		font-size: 1.3em;
+		margin: 10px 0;
+	}
+}
+
+input.email {
+	width: 250px;
+	height: 30px;
+	padding: 10px;
+	line-height: 30px;
+	font-size: .8em;
+	font-family: 'Share Tech', sans-serif;
+}
+
+@link_color: #EF0088;
+
+a:link, a:active, a:visited {
+	color: @link_color;
+	text-decoration: none;
+	border-bottom: 2px solid #bbb;
+}
+
+.light_text {
+	color: #ccc;
+}
+
+a:hover {
+	color: lighten(@link_color, 20%)
+}
+
+.centered {
+	text-align: center;
+}
+
+section.splash_wrapper {
+	position: fixed;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	cursor: pointer;
+	display: none;
+	h1 {
+		margin: 20px;
+	}
+}
+
+header {
+	text-align: center;
+	position: relative;
+
+	h1 {
+		font-size: 1.7em;
+		position: relative;
+		z-index: 10;
+		letter-spacing: 0.01em;
+		font-family: 'ProximaNovaSemiBold';
+		margin: 20px;
+
+		a:link, a:active, a:visited {
+			text-decoration: none;
+			color: #ccc;
+			border: 0;
+		}
+	}
+}
+h2 {
+	font-size: 2.6em;
+	z-index: 10;
+	position: relative;
+	letter-spacing: 0.01em;
+	font-family: 'ProximaNovaSemiBold';
+}
+		
+
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+/////////////////		HOME PAGE: 		///////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+.square_container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	div {
+		width: 7.69230769231%;
+		float: left;
+		-webkit-transition: background-color .2s ease-in-out;
+		-moz-transition: background-color .2s ease-in-out;
+		-o-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+	}
+
+	.colored {
+		background-color: #00FF88;
+	}
+}
+
+
+div.content {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* Flexbox container */
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+
+	/* flex items on column */
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	/* Define the position of the content on the main axis
+	http://www.w3.org/TR/css3-flexbox/#justify-content-property */
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	/* Define the position of the content on the cross axis
+	http://www.w3.org/TR/css3-flexbox/#align-items-property */
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	text-align: center;
+
+	span.advice {
+		-webkit-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+		opacity: 0;
+		z-index: 10;
+		font-size: 1.3em;
+	}
+}
+
+.width_wrapper {
+	max-width: 800px;
+}
+
+.m-hig-0 {
+	margin: 200px auto;
+}
+
+.m-t-hig-0 {
+	margin: 200px auto 0px;
+}
+
+.m-sma-0 {
+	margin: 100px auto;
+}
+
+section.portfolio {
+	background-color: #333;
+	padding: 10px;
+}
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+/////////////////BROWSER PER IL PORTFOLIO//////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+.browser_container {
+	max-width: 900px;
+	height: 500px;
+	margin: 200px auto;
+	font-family: 'Inconsolata', sans-serif;
+
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+
+	.shadow {
+		width: 400px;
+		height: 0px;
+		-webkit-box-shadow: 0px 0px 250px 250px rgba(255, 255, 255, 0.1);
+		box-shadow: 0px 0px 250px 250px rgba(255, 255, 255, 0.1);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -200px;
+
+	}
+
+	.barra_top {
+		background-color: #999;
+		height: 50px;
+		padding: 0 10px;
+		// border-top-left-radius: 10px; 
+		// border-top-right-radius: 10px;
+		position: relative;
+
+		p.top_title {
+			font-size: 11px;
+			text-transform: uppercase;
+			color: #ccc;
+			margin: 0 auto;
+			padding: 4px;
+			letter-spacing: 1px;
+			text-align: center;
+		}
+
+		.indirizzo {
+			background-color: #f3f3f3;
+			border-radius: 3px;
+			width: 93%;
+			height: 20px;
+			position: absolute;
+			bottom: 10px;
+
+			p {
+				font-size: 12px;
+				color: #999;
+				margin: 0;
+				padding-left: 10px;
+				line-height: 20px;
+			}
+		}
+
+		.options {
+			position: absolute;
+			width: 5%;
+			height: 20px;
+			right: 0;
+			padding: 1px;
+			cursor: pointer;
+			// border: 1px solid red;
+			// padding-right: 10px; 
+			.stroke {
+				height: 4px;
+				display: block;
+				margin: 2px;
+				width: 20px;
+				// border: 1px solid red;
+				background-color: rgba(255, 255, 255, 0.2);
+				z-index: 999;
+				border-radius: 3px;
+				-webkit-transition: all .4s ease-in-out;
+				-moz-transition: all .4s ease-in-out;
+				-o-transition: all .4s ease-in-out;
+				transition: all .4s ease-in-out;
+			}
+		}
+	}
+
+	.screenshot_container {
+		position: relative;
+		// border-bottom-left-radius: 10px; 
+		// border-bottom-right-radius: 10px;
+		background-color: #eee;
+		height: 450px;
+		overflow: hidden;
+		
+
+		.scroll {
+			position: absolute;
+			border-radius: 5px;
+			width: 7px;
+			height: 200px;
+			background-color: rgba(0, 0, 0, 0.4);
+			right: 0px;
+			top: 0px;
+			margin: 5px 5px 0 0;
+		}
+
+		.site_ss {
+			background-image: attr(data-bg url);
+			background-size: cover;
+			background-position: top center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.info {
+			z-index: 10;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 20px;
+			border-bottom-left-radius: 10px; 
+			border-bottom-right-radius: 10px;
+			background-color: rgba(255, 255, 255, 0.7);
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			-o-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+			visibility:visible;
+			opacity:1;
+			transition-delay:0s;
+			font-size: .7em;
+
+			/* Flexbox container */
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: -webkit-box;
+			display: flex;
+
+			/* flex items on row (reverse ordered) */
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			/* Define the position of the content on the main axis
+			http://www.w3.org/TR/css3-flexbox/#justify-content-property */
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			/* Define the position of the content on the cross axis
+			http://www.w3.org/TR/css3-flexbox/#align-items-property */
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+
+			.brand_logo {
+				width: 50%;
+				position: relative;
+				text-align: center;
+			}
+
+			.brand_description {
+				width: 50%;
+				position: relative;
+			}
+		}
+
+		.hide {
+			visibility:hidden;
+			opacity:0;
+			transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+		}
+	}
+}
+
+.browser_container:hover .barra_top .options .stroke {
+	background-color: #EF0088;
+}
+
+// Contatti
+
+li#mail:hover:after {
+	content: ' hi@curromatteo.com';
+	color: #ccc;
+
+}
+li#skype:hover:after {
+	content: ' curromatteo';
+	color: #ccc;
+
+}
+li#telefono:hover:after {
+	content: ' ricevi il mio numero via mail';
+	color: #ccc;
+
+}
+li#blog:hover:after {
+	content: ' blog.curromatteo.com';
+	color: #ccc;
+
+}
+li#mlist:hover:after {
+	content: ' poche mails e niente spam, promesso!';
+	color: #ccc;
+}
+
+// ribbons
+/* Base */
+#cssmatter {
+    position:absolute;
+    top:60px;
+    z-index:9999;
+}
+
+/* Right */
+#cssmatter.right {
+    right:0;
+}
+
+#cssmatter a {
+    display:block;
+    width:80px;
+    height:99px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    overflow:hidden;
+    text-align:-888888;
+    text-decoration: none;
+    border: 0;
+}
+
+// csswinner.com
+.csswinner{
+position:absolute;
+top:380px;
+right:0px;
+z-index:9999;
+}
+.csswinner a{
+width:81px;
+height:59px;
+text-indent:-9000px;
+display:block;
+border: 0;
+background:url(http://www.csswinner.com/images/nominee-graphics/nominee-black-right.png) no-repeat;
+}
+
+
