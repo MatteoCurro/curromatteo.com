@@ -45,6 +45,74 @@
 
 	<!-- PORTFOLIO -->
 	<section class="portfolio">
+
+<div class="browser_container">
+			<div class="shadow"></div>
+
+			<div class="barra_top">
+				<p class="top_title">Landoebadon</p>
+				<div class="indirizzo">
+					<p>http://www.landoebadon.com</p>
+				</div>
+				<div class="options">
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+				</div>
+			</div>
+			<div class="screenshot_container">
+				<div class="site_ss" data-bg="img/landoebadon.png"></div>
+				<div class="scroll"></div>
+
+				<div class="info hide">
+					<div class="brand_logo">
+						<img src="img/landoebadon_logo.png" alt="Landoebadon">
+					</div>
+					<div class="brand_description"><p><strong>Landoebadon S.n.c.</strong> &egrave; uno studio di consulenza in ambito fashion/calzaturiero, fondato da Alex Lando e Marco Badon di recente, che si sta facendo un nome lavorando con prestigiosi Brand internazionali e locali.</p>
+					<p>
+					<strong>Cliente:</strong> Landoebadon S.n.c.<br>
+					<strong>Settore:</strong> Consulenza moda<br>
+					<strong>Anno:</strong> 2014<br>
+					<strong>URL:</strong> <a href="http://www.landoebadon.com">http://www.landoebadon.com</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<div class="browser_container">
+			<div class="shadow"></div>
+
+			<div class="barra_top">
+				<p class="top_title">Kludge</p>
+				<div class="indirizzo">
+					<p>http://www.kludge.it</p>
+				</div>
+				<div class="options">
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+				</div>
+			</div>
+			<div class="screenshot_container">
+				<div class="site_ss" data-bg="img/kludge.png"></div>
+				<div class="scroll"></div>
+
+				<div class="info hide">
+					<div class="brand_logo">
+						<img src="img/kludge_logo.png" alt="Kludge - Web design in pillole">
+					</div>
+					<div class="brand_description"><p><strong>Kludge</strong> &egrave; un blog / portale dedicato al web design e al web development in italiano. Con tutorials e articoli tocca molti settori dello sviluppo web: dalle basi alle nuove tendenze.</p>
+					<p>
+					<strong>Cliente:</strong> Progetto personale<br>
+					<strong>Settore:</strong> Blog / Programmazione<br>
+					<strong>Anno:</strong> 2014<br>
+					<strong>URL:</strong> <a href="http://www.kludge.it">http://www.kludge.it</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 		<div class="browser_container">
 			<div class="shadow"></div>
 
