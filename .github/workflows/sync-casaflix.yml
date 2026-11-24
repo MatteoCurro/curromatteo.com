@@ -35,6 +35,14 @@ jobs:
           mkdir -p data
           install -m 0644 /tmp/casaflix-source/data/movies.json ./data/movies.json
           install -m 0644 /tmp/casaflix-source/data/tv.json ./data/tv.json
+          python3 - <<'PY'
+          from pathlib import Path
+          page = Path("index.html")
+          html = page.read_text(encoding="utf-8-sig")
+          html = html.replace("<title>CasaFlix</title>", "<title>Bobo Movie Night</title>")
+          html = html.replace("🎬 CasaFlix</div>", "🎬 Bobo Movie Night</div>")
+          page.write_text(html, encoding="utf-8")
+          PY
           touch .nojekyll
 
       - name: Commit only if upstream content changed
