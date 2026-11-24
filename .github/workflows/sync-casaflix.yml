@@ -1,0 +1,52 @@
+name: Sync CasaFlix from upstream
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6,18 * * *'
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/sync-casaflix.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: casaflix-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout CasaFlix Pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: casaflix-pages
+          persist-credentials: true
+
+      - name: Get latest upstream source and catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --depth=1 --branch main https://github.com/scageto/CasaFlix.git /tmp/casaflix-source
+          install -m 0644 /tmp/casaflix-source/index.html ./index.html
+          mkdir -p data
+          install -m 0644 /tmp/casaflix-source/data/movies.json ./data/movies.json
+          install -m 0644 /tmp/casaflix-source/data/tv.json ./data/tv.json
+          touch .nojekyll
+
+      - name: Commit only if upstream content changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html data/movies.json data/tv.json .nojekyll
+          if git diff --cached --quiet; then
+            echo 'CasaFlix already up to date.'
+            exit 0
+          fi
+          git commit -m 'sync: update CasaFlix from scageto/CasaFlix'
+          git push origin HEAD:casaflix-pages
