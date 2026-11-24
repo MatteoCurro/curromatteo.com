@@ -656,7 +656,7 @@ async function ensureLoaded(type) {
   loading[type] = true;
   if (activeTab === type) showLoadingState();
   try {
-    const file = type === 'movie' ? 'https://raw.githubusercontent.com/scageto/CasaFlix/main/data/movies.json' : 'https://raw.githubusercontent.com/scageto/CasaFlix/main/data/tv.json';
+    const file = type === 'movie' ? 'data/movies.json' : 'data/tv.json';
     const r = await fetch(file, { cache: 'no-cache' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
